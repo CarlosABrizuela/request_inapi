@@ -60,6 +60,7 @@ class Request_Scraper(AbstractScraper):
         """
         with open(self.config["output"], 'w', encoding='utf-8') as json_file:
             json.dump(self.data, json_file, indent=4, ensure_ascii=False)
+            print(f"Se guardaron los datos en: {self.config['output']}")
 
     def close(self):
         """
@@ -80,7 +81,6 @@ class Request_Scraper(AbstractScraper):
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.config['numero_hilos']) as executor:
             executor.map(run_registro, lista_registros)
 
-        print(self.data)##
         self.to_json()
         self.close()
     
