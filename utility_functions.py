@@ -30,8 +30,10 @@ def get_config():
         config['url_busca_marca']= "/Marca/BuscarMarca.aspx/FindMarcas"
         config['url_busca_por_solicitud']= "/Marca/BuscarMarca.aspx/FindMarcaByNumeroSolicitud"
         config["proxy_ip_port"] = None
-        config['register_list_dir'] = ''
-        config['numero_hilos'] = 1
+        config['register_list_dir']= ''
+        config['numero_hilos']= 1
+        config['delay_intentos']= 0
+        config['max_intentos']= 1
         return config
     
 # print(get_registros(get_config()))

@@ -98,6 +98,24 @@
                 "IPT": false
             },
             {
+                "Observada_de_fondo": true,
+                "Fecha_observada_de_fondo": "12/12/2016",
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,
                 "Apelaciones": false,
@@ -120,6 +138,12 @@
     {
         "registro": "1236275",
         "instancias": [
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
             {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,
@@ -210,24 +234,6 @@
                 "IPT": false
             },
             {
-                "Observada_de_fondo": true,
-                "Fecha_observada_de_fondo": "12/12/2016",
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,
                 "Apelaciones": false,
@@ -250,12 +256,6 @@
     {
         "registro": "1236450",
         "instancias": [
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
             {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,
@@ -362,30 +362,36 @@
                 "Fecha_observada_de_fondo": null,
                 "Apelaciones": false,
                 "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
             }
         ]
     },
     {
         "registro": "1236472",
         "instancias": [
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
             {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,
@@ -474,30 +480,6 @@
                 "Fecha_observada_de_fondo": null,
                 "Apelaciones": false,
                 "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
-            },
-            {
-                "Observada_de_fondo": false,
-                "Fecha_observada_de_fondo": null,
-                "Apelaciones": false,
-                "IPT": false
             }
         ]
     },
@@ -574,6 +556,17 @@
                 "Fecha_observada_de_fondo": null,
                 "Apelaciones": false,
                 "IPT": false
+            }
+        ]
+    },
+    {
+        "registro": "1236482",
+        "instancias": [
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
             },
             {
                 "Observada_de_fondo": false,
@@ -592,6 +585,48 @@
     {
         "registro": "1236482",
         "instancias": [
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
+            {
+                "Observada_de_fondo": false,
+                "Fecha_observada_de_fondo": null,
+                "Apelaciones": false,
+                "IPT": false
+            },
             {
                 "Observada_de_fondo": false,
                 "Fecha_observada_de_fondo": null,

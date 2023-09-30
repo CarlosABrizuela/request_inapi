@@ -8,3 +8,5 @@ output_dir: C:/Users/LNKIZ/Desktop/Test python/proyecto/request_inapi/files/
 registers_list_file_name: register_number_list.txt
 register_list_dir: C:/Users/LNKIZ/Desktop/Test python/proyecto/request_inapi/files/
 numero_hilos: 5
+max_intentos: 3
+delay_intentos: 5

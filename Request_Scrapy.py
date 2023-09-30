@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 from AbstractScraper import AbstractScraper
 from requests.exceptions import ProxyError
 import concurrent.futures
@@ -23,16 +24,29 @@ class Request_Scraper(AbstractScraper):
         """
         Realiza una solicitud HTTP a la URL especificada y devuelve la respuesta en formato json.
         """
-        try:
-            response = self.session.post(self.full_url(url), json=payload)
-            if response.status_code == 200:
-                return response.json()
-            print(f"Error en la solicitud. Código de estado: {response.status_code}")
-        except ProxyError as e:
-            print('Error de proxy:', e)
-        except Exception as e:
-            print('Error de proxy:', e)
-            return None
+        max_intentos = self.config['max_intentos'] 
+        delay_intentos = self.config['delay_intentos']
+        intentos = 0
+
+        while intentos < max_intentos:
+            try:
+                response = self.session.post(self.full_url(url), json=payload)
+                if response.status_code == 200:
+                    return response.json()
+                else:
+                    print(f"Error en la solicitud. Código de estado: {response.status_code}. Reintentando...")
+
+            except ProxyError as e:
+                print('Error de proxy:', e)
+                return None
+            except requests.RequestException as e:
+                print(f"Error de solicitud: {e}. Reintentando...")
+
+            intentos += 1
+            time.sleep(delay_intentos)
+
+        print(f"No se pudo hacer el request a: {url}. Fin de intentos")
+        return None
 
     def full_url(self, url):
         """
@@ -100,6 +114,7 @@ class Request_Scraper(AbstractScraper):
             "param17": "1",
         }
         response = self.fetch(self.config['url_busca_marca'], payload)
+        
         if(response):
             response_dict = json.loads(response['d'])
             hash = response_dict['Hash']
