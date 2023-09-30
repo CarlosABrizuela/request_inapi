@@ -4,5 +4,6 @@ url_busca_por_solicitud: /Marca/BuscarMarca.aspx/FindMarcaByNumeroSolicitud
 proxy: False
 proxy_ip_port:
 output_file_name: salida
-output_dir: C:\Users\LNKIZ\Desktop\Test python\proyecto\request_inapi\files
+output_dir: C:/Users/LNKIZ/Desktop/Test python/proyecto/request_inapi/files/
 registers_list_file_name: register_number_list.txt
+register_list_dir: C:/Users/LNKIZ/Desktop/Test python/proyecto/request_inapi/files/

@@ -1,9 +1,15 @@
 import json
+from traceback import print_tb
 import requests
 from AbstractScraper import AbstractScraper
 
 class Request_Scraper(AbstractScraper):
     def __init__(self, config):
+        """Inicia el Scraper
+
+        Args:
+            config (dict): contiene las configuraciones: proxy, proxy_ip_port, output
+        """
         self.config = config
         super().__init__(self.config['base_url'])
         self.data = []
@@ -32,7 +38,8 @@ class Request_Scraper(AbstractScraper):
         """
         Convierte los datos extraídos en formato JSON.
         """
-        pass
+        with open(self.config["output"], 'w', encoding='utf-8') as json_file:
+            json.dump(self.data, json_file, indent=4, ensure_ascii=False)
 
     def close(self):
         """
@@ -40,11 +47,25 @@ class Request_Scraper(AbstractScraper):
         """
         self.session.close()
     
-    def run(self):
+    def run(self, lista_registros):
         """
         Ejecución del codigo
+        args:
+            lista_registros (list): lista de los registros. 
         """
-        self.actual_register = 1236227
+        for registro in lista_registros:
+            print(f"Registro: {registro}")
+            self.actual_register = registro
+            self.buscar_marcas()
+        
+        print(self.data)##
+        self.to_json()
+        self.close()
+    
+    def buscar_marcas(self):
+        """
+        busca las marcas para el numero de registro actual
+        """
         payload = {
             "LastNumSol": 0,
             "Hash": "",
@@ -73,21 +94,18 @@ class Request_Scraper(AbstractScraper):
             response_dict = json.loads(response['d'])
             hash = response_dict['Hash']
             marcas = response_dict['Marcas']
-            self.busca_marca_por_solicitud(marcas, hash)
-            print(self.data)
-        
-        self.close()
-    
+            self.busca_marca_por_solicitud(marcas, hash) #siguiente método
+
     def busca_marca_por_solicitud(self, marcas, hash):
         """
         obtiene para cada marca el detalle
         """
         for marca in marcas:
             payload = {
-                                "Hash": hash,
-                                "IDW": "",
-                                "numeroSolicitud": marca['id']
-                        }
+                "Hash": hash,
+                "IDW": "",
+                "numeroSolicitud": marca['id']
+            }
             response = self.fetch(self.config['url_busca_por_solicitud'], payload)
             if(response):
                 response_dict = json.loads(response['d'])
