@@ -31,6 +31,7 @@ def get_config():
         config['url_busca_por_solicitud']= "/Marca/BuscarMarca.aspx/FindMarcaByNumeroSolicitud"
         config["proxy_ip_port"] = None
         config['register_list_dir'] = ''
+        config['numero_hilos'] = 1
         return config
     
-print(get_registros(get_config()))
+# print(get_registros(get_config()))

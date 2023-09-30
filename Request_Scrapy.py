@@ -1,7 +1,8 @@
 import json
-from traceback import print_tb
 import requests
 from AbstractScraper import AbstractScraper
+from requests.exceptions import ProxyError
+import concurrent.futures
 
 class Request_Scraper(AbstractScraper):
     def __init__(self, config):
@@ -22,11 +23,16 @@ class Request_Scraper(AbstractScraper):
         """
         Realiza una solicitud HTTP a la URL especificada y devuelve la respuesta en formato json.
         """
-        response = self.session.post(self.full_url(url), json=payload)
-        if response.status_code == 200:
-            return response.json()
-        print(f"Error en la solicitud. Código de estado: {response.status_code}")
-        return None
+        try:
+            response = self.session.post(self.full_url(url), json=payload)
+            if response.status_code == 200:
+                return response.json()
+            print(f"Error en la solicitud. Código de estado: {response.status_code}")
+        except ProxyError as e:
+            print('Error de proxy:', e)
+        except Exception as e:
+            print('Error de proxy:', e)
+            return None
 
     def full_url(self, url):
         """
@@ -53,19 +59,23 @@ class Request_Scraper(AbstractScraper):
         args:
             lista_registros (list): lista de los registros. 
         """
-        for registro in lista_registros:
-            print(f"Registro: {registro}")
+        def run_registro(registro):
             self.actual_register = registro
             self.buscar_marcas()
-        
+            
+        with concurrent.futures.ThreadPoolExecutor(max_workers=self.config['numero_hilos']) as executor:
+            executor.map(run_registro, lista_registros)
+
         print(self.data)##
         self.to_json()
         self.close()
+    
     
     def buscar_marcas(self):
         """
         busca las marcas para el numero de registro actual
         """
+        print(f"Registro: {self.actual_register}")
         payload = {
             "LastNumSol": 0,
             "Hash": "",
