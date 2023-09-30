@@ -7,17 +7,17 @@ fichero .json de salida.
 Formato de salida:
 ```json
 [{
-        {'registro': NRO_REGISTRO, 
-        'instancias': [
+        {"registro": NRO_REGISTRO, 
+        "instancias": [
             {
-                'Observada_de_fondo': True/False, 
-                'Fecha_observada_de_fondo': Fecha, 
-                'Apelaciones': True/False, 
-                'IPT': True/False
+                "Observada_de_fondo": True/False, 
+                "Fecha_observada_de_fondo": Fecha, 
+                "Apelaciones": True/False, 
+                "IPT": True/False
             }, 
-            ...
+            "..."
             ]},
-        {...},...
+        {"..."},"..."
 }]
 ```
 La configuración del crawler se realiza mediante un fichero ubicado en la carpeta raíz "config.yaml".
